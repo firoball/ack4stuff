@@ -1,0 +1,49 @@
+1/14/2001 by Firoball
+---------------------
+
+modified: movement.wdl, citadel.wdl, forest.wmp, forest1.wmp (see remarks)
+
+-improved camera behavior
+-added moving up down of camera (looks better when player is not moving)
+        still causes some trembling of the model but that will go away
+        when model has waiting animation
+-added timer function for up/down move of camera
+-rebuilt forest level. now clipepd terrain is supported
+        still looks ugly because terrain is not yet optimized
+        skydome is missing, this leads to display bugs
+        terrain tiles should be smaller
+        to speed up things enter CLIP_RANGE=1500 into commandline
+        also try out fog_color=1
+        speed is good on my P200MMX. I get 30-45 frames in 640x480 with voodoo2
+        software mode is slow though. ~16fps in 320x240
+
+Next step:      optimizing terrain and searching a good way to preserve speed
+                implementing reversed alpha blobs for d3d mode and simple
+                transparent blob shadows for software mode
+
+Verified Bugs:  Due to an engine bug polygonal shadows don't work on flat surfaces
+                Don't work on shaded map entities either... this means blob shadows
+                for now
+Fixed Bugs:     Fixed some time correction issues with camera movement
+---------------------
+
+1/19/2001 by Firoball
+---------------------
+
+modified:	movement.wdl, citadel.wdl, forest.wmp, forest1.wmp, tree1.wmp
+		nahhh... nearly everything. 	
+
+-added sky dome with test skin
+-changed clip range and fog_color defaults
+-uploaded published test. (files/citadel.zip)
+
+Next step: see last update (...)
+
+Verified Bugs:  fog is making me mad. can't get the terrain and tree entities to
+		fog independently from the skydome in d3d mode.
+		in software mode it worked. weird.
+		For now sky is fogged too. but on my system it's too dark, on
+		my brother's system the clipping is still visible.
+		We need smaller trees.
+
+Fixed bugs:	display bugs fixed because of skydome. 
